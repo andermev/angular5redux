@@ -1,0 +1,30 @@
+import { DevicesUpdatedAction } from '../actions/device';
+import { DeviceService } from '../services/device.service';
+import { Observable } from 'rxjs/Observable';
+import { Injectable } from '@angular/core';
+import { Action } from '@ngrx/store';
+import { Actions, Effect } from '@ngrx/effects';
+import { HttpClient } from '@angular/common/http';
+import { of } from 'rxjs/observable/of';
+
+import * as device from '../actions/device';
+
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/switchMap';
+
+@Injectable()
+export class DeviceEffects {
+    @Effect()
+    update$: Observable<Action> = this.actions$
+        .ofType(device.DEVICESUPDATED)
+        .switchMap(() =>
+            this.deviceService
+                .getDevices()
+                .map(data => new DevicesUpdatedAction(data))
+        );
+
+    constructor(
+        private deviceService: DeviceService,
+        private actions$: Actions
+    ) {}
+}

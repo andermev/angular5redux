@@ -1,0 +1,14 @@
+<p *ngFor="let device of (devices$ | async)">
+  <p class="name">
+      {{device.name}}
+  </p>
+  <p class="model">
+      {{device.model}}
+  </p>
+  <p class="state">
+      {{device.state}}
+  </p>
+  <p class="image">
+      {{device.image}}
+  </p>
+</p>
