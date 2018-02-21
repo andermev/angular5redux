@@ -1,4 +1,4 @@
-<p *ngFor="let device of (devices$ | async)">
+<div *ngFor="let device of (devices$ | async)">
   <p class="name">
       {{device.name}}
   </p>
@@ -11,4 +11,4 @@
   <p class="image">
       {{device.image}}
   </p>
-</p>
+</div>

@@ -20,7 +20,7 @@ import { EffectsModule } from '@ngrx/effects';
   imports: [
     BrowserModule,
     HttpClientModule,
-    StoreModule.provideStore(reducers),
+    StoreModule.forRoot(reducers),
     EffectsModule.forRoot([DeviceEffects])
   ],
   providers: [DeviceService],
