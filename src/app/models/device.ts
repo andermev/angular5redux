@@ -1,6 +1,6 @@
 export interface Device {
+    hwId: string;
     name: string;
-    model: number;
-    state: number;
-    image: Blob;
+    state: string;
+    img: string;
 }

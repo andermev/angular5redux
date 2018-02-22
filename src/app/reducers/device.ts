@@ -1,9 +1,9 @@
-import { ActionReducer, Action } from '@ngrx/store';
-import * as deviceAction from '../actions/device';
+import { Device } from './../models/device';
+import * as device from '../actions/device';
 
-export function reducer(state = [], action: deviceAction.DevicesUpdatedAction) {
+export function reducer(state = [], action: device.DevicesUpdatedAction) {
     switch (action.type) {
-        case deviceAction.DEVICESUPDATED:
+        case device.DEVICESUPDATED:
             return action.payload;
         default:
             return state;

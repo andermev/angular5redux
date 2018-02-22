@@ -1,14 +1,15 @@
-<div *ngFor="let device of (devices$ | async)">
-  <p class="name">
-      {{device.name}}
-  </p>
-  <p class="model">
-      {{device.model}}
-  </p>
-  <p class="state">
-      {{device.state}}
-  </p>
-  <p class="image">
-      {{device.image}}
-  </p>
-</div>
+<ul *ngFor="let device of (devices$ | async)">
+    <li class="hwId">
+        {{device.hwId}}
+    </li>
+    <li class="name">
+        {{device.name}}
+    </li>
+    <li class="state">
+        {{device.state}}
+    </li>
+    <li class="img">
+        {{device.img}}
+    </li>
+</ul>
+

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+// import { AppComponent } from './app.component';
 import { DeviceComponent } from './device/device.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './reducers/index';
@@ -14,7 +14,7 @@ import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    // AppComponent,
     DeviceComponent
   ],
   imports: [
@@ -24,6 +24,6 @@ import { EffectsModule } from '@ngrx/effects';
     EffectsModule.forRoot([DeviceEffects])
   ],
   providers: [DeviceService],
-  bootstrap: [AppComponent]
+  bootstrap: [DeviceComponent]
 })
 export class AppModule { }

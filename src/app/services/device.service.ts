@@ -20,7 +20,12 @@ export class DeviceService {
                 }
             }).map(result => {
                 return Object.keys(result.data).map((key, index) => {
-                    return { name: key, model: result.rates[key], state: result.state, image: result.image };
+                    return {
+                        hwId: result.data[index].hwId,
+                        name: result.data[index].name,
+                        state: result.data[index].state,
+                        img: result.data[index].media.img
+                    };
             });
         });
     }
