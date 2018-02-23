@@ -8,8 +8,8 @@ import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-device',
-  templateUrl: './device.component.html',
-  styleUrls: ['./device.component.css'],
+  templateUrl: './device-list.component.html',
+  styleUrls: ['./device-list.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DeviceComponent implements OnInit {

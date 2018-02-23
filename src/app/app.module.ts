@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 // import { AppComponent } from './app.component';
-import { DeviceComponent } from './device/device.component';
+import { DeviceComponent } from './device-list/device-list.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './reducers/index';
 
