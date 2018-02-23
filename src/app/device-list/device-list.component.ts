@@ -17,8 +17,9 @@ export class DeviceComponent implements OnInit {
     public devices$: Observable<Device[]>;
 
     constructor(public store: Store<fromRoot.State>) {
-        this.devices$ = store.select(fromRoot.getDevices);
-        this.devices$.subscribe(console.log);
+        if (!this.devices$) {
+            this.devices$ = store.select(fromRoot.getDevices);
+        }
     }
 
     // Dispatch the Action

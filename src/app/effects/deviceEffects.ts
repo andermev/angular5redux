@@ -15,7 +15,7 @@ import 'rxjs/add/operator/switchMap';
 @Injectable()
 export class DeviceEffects {
     @Effect()
-    update$: Observable<Action> = this.actions$
+    read$: Observable<Action> = this.actions$
         .switchMap(() =>
             this.deviceService
                 .getDevices()
