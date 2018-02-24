@@ -18,7 +18,7 @@ export class DeviceEffects {
     read$: Observable<Action> = this.actions$
         .switchMap(() =>
             this.deviceService
-                .getDevices()
+                .getDevices(2, 1)
                 .map(data => new DevicesUpdatedAction(data))
         );
 

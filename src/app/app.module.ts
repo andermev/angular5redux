@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 
-// import { AppComponent } from './app.component';
 import { DeviceComponent } from './device-list/device-list.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './reducers/index';
@@ -14,6 +14,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { EffectsModule } from '@ngrx/effects';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from '../app/headers/header.component';
+import { PaginationConfig } from './pagination/pagination.config';
+
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -26,9 +29,10 @@ import { HeaderComponent } from '../app/headers/header.component';
     HttpClientModule,
     FormsModule,
     StoreModule.forRoot(reducers),
-    EffectsModule.forRoot([DeviceEffects])
+    EffectsModule.forRoot([DeviceEffects]),
+    NgbModule.forRoot()
   ],
-  providers: [DeviceService],
+  providers: [DeviceService, PaginationConfig],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

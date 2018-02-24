@@ -15,16 +15,25 @@ import { Observable } from 'rxjs/Observable';
 export class DeviceComponent implements OnInit {
 
     public devices$: Observable<Device[]>;
+    totalItems: 5;
+    page: 2;
+    itemsPerPage: 3;
+    previousPage: any;
 
     constructor(public store: Store<fromRoot.State>) {
-        if (!this.devices$) {
-            this.devices$ = store.select(fromRoot.getDevices);
-        }
+        this.devices$ = store.select(fromRoot.getDevices);
     }
 
     // Dispatch the Action
     ngOnInit() {
         this.store.dispatch(new DevicesUpdatedAction([]));
+    }
+
+    loadPage(page: number) {
+        if (page !== this.previousPage) {
+            this.previousPage = page;
+            this.store.dispatch(new DevicesUpdatedAction([]));
+        }
     }
 
 }

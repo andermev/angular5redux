@@ -1,3 +1,4 @@
+<div>
 <div class="row">
   </div>
   <hr>
@@ -22,4 +23,9 @@
       </a>
     </div>
   </div>
+  <div class="row justify-content-center">
+    <!-- <ngbd-pagination-basic></ngbd-pagination-basic> -->
+    <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+</div>
+</div>
 

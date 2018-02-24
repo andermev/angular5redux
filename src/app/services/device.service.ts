@@ -8,8 +8,10 @@ import { HttpHeaders } from '@angular/common/http';
 export class DeviceService {
     constructor(private http: HttpClient) {}
 
-    getDevices(): Observable<Device[]> {
-        const url = 'https://api.smartenit.io:443/v2/devices/?limit=2&fields=name,model,state,hwId,media&page=1h';
+    getDevices(limit: number, page: number): Observable<Device[]> {
+        const limitParam = limit ? limit : 2;
+        const pageParam = page ? page : 1;
+        const url = 'https://api.smartenit.io:443/v2/devices/?limit=' + limitParam + '&fields=name,model,state,hwId,media&page=' + pageParam;
         const authorization = 'Bearer ';
 
         return this.http.get<any>(url, {
