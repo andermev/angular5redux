@@ -17,6 +17,7 @@ import { HeaderComponent } from '../app/headers/header.component';
 import { PaginationConfig } from './pagination/pagination.config';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { PaginationModule } from './pagination/pagination/pagination.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([DeviceEffects]),
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    PaginationModule
   ],
   providers: [DeviceService, PaginationConfig],
   bootstrap: [AppComponent]

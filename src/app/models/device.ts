@@ -4,3 +4,10 @@ export interface Device {
     state: string;
     img: string;
 }
+
+export interface DeviceResult {
+    page: number;
+    total_results: number;
+    total_pages: number;
+    results: Device[];
+}

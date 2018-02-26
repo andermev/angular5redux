@@ -7,7 +7,7 @@
       <a
         href="#"
         class="list-group-item clearfix"
-        *ngFor="let device of (devices$ | async)">
+        *ngFor="let device of (devices$.devices | async)">
         <div class="pull-left">
           <h4 class="list-group-item-heading">{{device.hwId}}</h4>
           <p class="list-group-item-text">{{device.name}}</p>
@@ -25,7 +25,9 @@
   </div>
   <div class="row justify-content-center">
     <!-- <ngbd-pagination-basic></ngbd-pagination-basic> -->
-    <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+    <!-- <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination> -->
+    <rbo-pagination [target]="target"
+                [page]="page | async"></rbo-pagination>
 </div>
 </div>
 

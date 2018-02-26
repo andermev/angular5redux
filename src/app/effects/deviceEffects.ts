@@ -19,7 +19,16 @@ export class DeviceEffects {
         .switchMap(() =>
             this.deviceService
                 .getDevices(2, 1)
-                .map(data => new DevicesUpdatedAction(data))
+                .map(data => new DevicesUpdatedAction(
+                    {
+                        devices: data,
+                        page: {
+                            size: 5,
+                            totalElements: 5,
+                            totalPages: 3,
+                            number: 1
+                        }
+                    }))
         );
 
     constructor(
